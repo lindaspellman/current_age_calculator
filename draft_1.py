@@ -26,6 +26,6 @@ else:
 if birth_month > current_month:
     approx_age -= 1
 
-    print(f"{name} is currently {approx_age} year(s) old. {third_person_pronoun} will turn {approx_age + 1} later this year.")
+    print(f"{name} is currently {approx_age} year(s) old. {third_person_pronoun} will turn {approx_age + 1} in about {birth_month - current_month} months.")
 else: 
     print(f"{name} is currently {approx_age} year(s) old.")
