@@ -3,21 +3,7 @@ from datetime import datetime
 current_day = datetime.now().day
 current_month = datetime.now().month
 current_year = datetime.now().year
-sex_not_real = False 
-
-def input_sex():
-    sex = input('Male or female (M/F): ').upper()
-    third_person_pronoun = ''
-    if sex != 'M' or sex != 'F':
-        sex_not_real == True  
-        while sex_not_real:
-            print('Please enter a valid answer.')
-            if sex == 'M':
-                return 'He'
-            elif sex == 'F':
-                return 'She'
-            else:
-                input_sex()
+given_sex_not_valid = True 
 
 print("Current Month: " + str(current_month))
 print("Current Day: " + str(current_day))
@@ -25,11 +11,20 @@ print("Current Year: " + str(current_year))
 
 name = input('Name of Person: ').title()
 
-third_person_pronoun = input_sex()
+while given_sex_not_valid:
+    sex = input('Male or female (M/F): ').upper()
+    if sex == 'M':
+        third_person_pronoun = 'He'
+        given_sex_not_valid = False 
+    elif sex == 'F':
+        third_person_pronoun = 'She'
+        given_sex_not_valid = False 
+    else:
+        print('Please enter a valid answer.')
 
     
 
-# print(f"Sex: {sex}")
+print(f"Third Person Pronoun in Use: {third_person_pronoun}")
 birth_month = int(input('Birth Month (number format): '))
 birth_day = int(input('Birth Day (only the day number): '))
 birth_year = int(input('Birth Year: '))
